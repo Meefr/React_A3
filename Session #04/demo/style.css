@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*  */
+:root {
+  --main-color: #8f754f;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Courier New", Courier, monospace;
+}
+h3 {
+  font-size: 30px;
+}
+/* singel respons */
+.main-color {
+  color: var(--main-color);
+}
+.bg-light {
+  background-color: rgb(248, 249, 250);
+}
+.bg-dark {
+  background-color: rgb(78, 78, 78);
+}
+
+.main-container {
+  width: 90%;
+  margin: 0 auto;
+}
+.pos-absolute {
+  position: absolute;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.container {
+  /* viewport height  1vh = 1% of height of screen*/
+  /* vw */
+  display: flex;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 1px;
+  background-image: url("images/background-image.jpg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  position: relative;
+}
+.layer {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: #fff;
+  opacity: 0.5;
+}
+.content {
+  /* position: relative; */
+  z-index: 1;
+  width: 500px;
+  margin: 30vh auto;
+  text-align: center;
+}
+
+.content h1 {
+  color: white;
+  font-size: inherit;
+}
+.content p {
+  color: #d7d1d1;
+  font-size: inherit;
+}
+
+.buttons-container {
+  margin-top: 20px;
+}
+.buttons-container button {
+  padding: 15px 20px;
+}
+
+.banner-btns {
+  margin-top: 16px;
+}
+.banner-btns button {
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 4px;
+  /* transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-in; */
+  transition: background-color 700ms ease-in-out, color 1s ease-in;
+}
+.first-btn {
+  background-color: var(--main-color);
+  border: none;
+}
+.sec-btn {
+  background-color: transparent;
+  border: solid 1px #fff;
+}
+.first-btn:hover,
+.sec-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.gallery {
+  display: flex;
+  margin: 50px auto;
+  width: 90%;
+}
+.member {
+  width: 33.333%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.member h3 {
+  color: var(--main-color) !important;
+  font-size: 20px;
+}
+/* .member h3 {
+  color: tomato;
+} */
+.child {
+  border: 1px solid #ccc;
+}
+.member img {
+  width: 100%;
+}
+/* 576 */
+@media screen and (min-width: 576px) {
+  .gallery {
+    flex-wrap: wrap;
+  }
+}
+
+.transform-test {
+  width: 200px;
+  height: 200px;
+  background-color: tomato;
+  transition: 1s ease-in transform;
+  /* transition: 1s ease-in width, height 1s ease-in; */
+}
+.transform-test:hover {
+  transform: scale(2);
+  /* width: calc(200px * 2);
+  height: calc(200px * 2); */
+}
+/* .test {
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: antiquewhite;
+} */
+/* inline tag */
+
+/* @media screen and (min-width: 576px) {
+} 
+ @media screen and (min-width: 768px) {
+} 
+ @media screen and (min-width: 992px) {
+}
+@media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 1400px) {
+} */
+
+.flex-container {
+  display: flex;
+  width: 600px;
+  height: 400px;
+  gap: 20px;
+  background-color: tomato;
+  /* transition: all; */
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.flex-container:hover {
+  animation-name: change-background;
+}
+@keyframes change-background {
+  0% {
+    background-color: gray;
+    opacity: 0;
+  }
+  25% {
+    background-color: rgb(66, 65, 65);
+    opacity: 0.2;
+  }
+  50% {
+    background-color: rgb(34, 34, 34);
+    opacity: 0.4;
+  }
+  75% {
+    background-color: rgb(34, 34, 34);
+    opacity: 0.8;
+  }
+  100% {
+    background-color: #000;
+    opacity: 1;
+  }
+}
+.animation-shape-parent {
+  width: 30px;
+  height: 50px;
+  bottom: 10px;
+  position: absolute;
+  border-radius: 50rem;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.animation-element {
+  position: absolute;
+  background-color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 8px;
+  width: 8px;
+  top: 1px;
+  border-radius: 50%;
+  animation-name: animate-to-bottom;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes animate-to-bottom {
+  0% {
+    opacity: 0;
+    top: 10%;
+  }
+  50% {
+    opacity: 1;
+    top: 50%;
+  }
+  100% {
+    opacity: 0;
+    top: 80%;
+  }
+}

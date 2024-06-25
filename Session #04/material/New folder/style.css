@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Coloring system */
+/* 
+R  G  B
+
+0 => 255
+
+0123456789abcdf
+
+00 => ff
+
+ff = 255
+
+
+*/
+
+body {
+  /* background-color: blue; */
+  /* background-color: #     00  00 ff; */
+  background-color: rgb(0, 0, 255);
+  height: 1000px;
+}
+
+/*border*/
+
+/*
+The border property is a shorthand for border-width, border-style, and border-color. It allows you to set the width, style, and color of an element's border in one declaration.
+Default Value: medium none currentColor
+   border-width: Sets the width of the border.
+      Default: medium
+      thin: A thin border.
+      medium: A medium border.
+      thick: A thick border.
+      length: A specific width (e.g., 2px, 0.5em).
+   border-style: Sets the style of the border.
+      Default: none
+      none: No border.
+      solid: A solid border.
+      dashed: A dashed border.
+      dotted: A dotted border.
+      double: A double border.
+      groove: A 3D grooved border.
+      ridge: A 3D ridged border.
+      inset: A 3D inset border.
+      outset: A 3D outset border.
+   border-color: Sets the color of the border.
+      Default: currentColor
+      color: A specific color (e.g., red, #000, rgba(0,0,0,0.5)).
+*/
+
+/* Example: setting border properties */
+.example-border {
+  border: 2px solid blue;
+}
+
+.example-border-width {
+  border-width: 5px;
+}
+
+.example-border-style {
+  border-style: dashed;
+}
+
+.example-border-color {
+  border-color: green;
+}
+
+/* :hover */
+
+/*
+The :hover pseudo-class applies while the user designates an element (with some pointing device), but does not activate it. It's commonly used to change the style of an element when the user hovers over it with a mouse.
+
+Default Value: No default value, it's used to apply styles conditionally based on hover state.
+   Example usage: Change the background color of a button when hovered.
+*/
+
+/* Example: Change background color on hover */
+.button:hover {
+  background-color: lightblue;
+}
+
+/*transition*/
+
+/*
+The transition property is a shorthand for specifying the four transition properties: transition-property, transition-duration, transition-timing-function, and transition-delay. It allows you to create smooth transitions when properties of an element change.
+
+Default Value: all 0s ease 0s
+   transition-property: Specifies the name of the CSS property to which the transition is applied.
+      Default: all
+      value_1: property name (e.g., width, height, background-color)
+   transition-duration: Specifies how long the transition should take.
+      Default: 0s
+      value_1: time (e.g., 1s, 200ms)
+   transition-timing-function: Specifies the speed curve of the transition.
+      Default: ease
+      value_1: ease (slow start, then fast, then slow end)
+      value_2: linear (same speed from start to end)
+      value_3: ease-in (slow start)
+      value_4: ease-out (slow end)
+      value_5: ease-in-out (slow start and end)
+   transition-delay: Specifies when the transition will start.
+      Default: 0s
+      value_1: time (e.g., 1s, 200ms)
+*/
+
+/*box-sizing*/
+
+/*
+The box-sizing property defines how the width and height of an element are calculated: whether they include the padding and borders, or not.
+Default Value: content-box
+   content-box: The width and height properties (and min/max properties) include only the content. Padding, border, and margin are not included.
+   border-box: The width and height properties (and min/max properties) include content, padding, and border. Margin is not included.
+*/
+
+/* Example: content-box (default) */
+.example-content-box {
+  box-sizing: content-box;
+  width: 100px;
+  padding: 10px;
+  border: 5px solid black;
+  background-color: lightblue;
+}
+
+/* Example: border-box */
+.example-border-box {
+  box-sizing: border-box;
+  width: 100px;
+  padding: 10px;
+  border: 5px solid black;
+  background-color: lightgreen;
+}
+
+/*transform*/
+
+/*
+The transform property applies a 2D or 3D transformation to an element. This property allows you to rotate, scale, move, or skew elements.
+
+Default Value: none
+   translate(x, y): Moves the element from its current position.
+      Example: transform: translate(50px, 100px);
+   scale(x, y): Changes the size of the element.
+      Example: transform: scale(2, 0.5);
+   rotate(angle): Rotates the element clockwise from its current position.
+      Example: transform: rotate(45deg);
+   skew(x-angle, y-angle): Skews the element along the X and Y axes.
+      Example: transform: skew(30deg, 20deg);
+   matrix(a, b, c, d, e, f): A combination of transform functions using a matrix of six values.
+      Example: transform: matrix(1, 0.5, -0.5, 1, 0, 0);
+*/
+/* Example: translate */
+.example-translate {
+  transform: translate(50px, 100px);
+}
+
+/* Example: scale */
+.example-scale {
+  transform: scale(2, 0.5);
+}
+
+/* Example: rotate */
+.example-rotate {
+  transform: rotate(45deg);
+}
+
+/* Example: skew */
+.example-skew {
+  transform: skew(30deg, 20deg);
+}
+
+/* Example: matrix */
+.example-matrix {
+  transform: matrix(1, 0.5, -0.5, 1, 0, 0);
+}
+
+/* @keyframes */
+
+/*
+The @keyframes rule specifies the animation code. It allows you to create animations by gradually changing from one set of CSS styles to another.
+
+Default Value: none (keyframes must be defined with specific names and percentages)
+   from: Defines the starting point of the animation (same as 0%)
+   to: Defines the ending point of the animation (same as 100%)
+   percentage: Defines intermediate points between the start and end (e.g., 50%)
+
+Properties that can be animated include colors, positions, and other style properties.
+
+Example: Create a simple animation that changes the background color from blue to red
+*/
+
+/* Example: Simple animation */
+@keyframes example-animation {
+  from {
+    background-color: blue;
+  }
+  to {
+    background-color: red;
+  }
+}
+
+.example-animated-element {
+  animation-name: example-animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+/* Example: More complex animation */
+@keyframes complex-animation {
+  0% {
+    background-color: blue;
+    transform: translateX(0);
+  }
+  50% {
+    background-color: green;
+    transform: translateX(100px);
+  }
+  100% {
+    background-color: red;
+    transform: translateX(0);
+  }
+}
+
+.complex-animated-element {
+  animation-name: complex-animation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* opacity */
+
+/*
+The opacity property sets the transparency level of an element. The value must be a number between 0.0 (fully transparent) and 1.0 (fully opaque).
+
+Default Value: 1
+   value_1: 0 (fully transparent)
+   value_2: 0.5 (50% opacity)
+   value_3: 1 (fully opaque)
+*/
+
+/* Example: Set opacity to 0.5 */
+.example-opacity {
+  opacity: 0.5;
+}
+/* visibility */
+
+/*
+The visibility property specifies whether an element is visible or hidden.
+
+Default Value: visible
+   visible: The element is visible.
+   hidden: The element is hidden (but still takes up space).
+   collapse: Only for table rows and columns; this value removes the element, but only if it's a table row or column. Otherwise, hidden is used.
+*/
+
+/* Example: Hide an element */
+.example-visibility {
+  visibility: hidden;
+}
+
+/* scroll-behavior: smooth; */
+
+.pointer {
+  width: 30px;
+  height: 50px;
+  bottom: 10px;
+  cursor: pointer;
+}
+.pointer span {
+  height: 8px;
+  width: 8px;
+  top: 1px;
+  animation-name: moveTobottom;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes moveTobottom {
+  0% {
+    opacity: 0;
+    top: 10%;
+  }
+  50% {
+    opacity: 1;
+    top: 50%;
+  }
+  100% {
+    opacity: 0;
+    top: 80%;
+  }
+}
